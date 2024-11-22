@@ -24,5 +24,9 @@
 <body>
     <h1>Este é um título com a fonte Yeseva One</h1>
     <p>Este é um parágrafo que também usa a fonte Yeseva One.</p>
+    body {
+        font-family: 'Yeseva One', sans-serif;
+    }
+    
 </body>
 </html>
