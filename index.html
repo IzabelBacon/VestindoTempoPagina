@@ -3,64 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vestindo o Tempo</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <title>Afternoon Coffee</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <li class="dropdown">
-        <a href="#">1920</a>
-        <a href="#">1930</a>
-        <a href="#">1940</a>
-        <a href="#">1950</a>
-        <a href="#">1960</a>
-        <a href="#">1970</a>
-        <a href="#">1980</a>
-        <a href="#">1990</a>
-        <a href="#">2000</a>
-        <a href="#">2020</a>
-    </li>
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="banner.png" alt="Logo">
+                <img src="logogatinho.png" alt="Logo do site">
             </div>
-            <ul>
+                <li><a href="#">Melhores</a></li>
+                <li class="dropdown">
+                    <a href="#">Oxi</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">1920</a></li>
+                        <li><a href="#">1930</a></li>
+                        <li><a href="#">1940</a></li>
+                        <li><a href="#">1950</a></li>
+                        <li><a href="#">1960</a></li>
+                        <li><a href="#">1970</a></li>
+                        <li><a href="#">1980</a></li>
+                        <li><a href="#">1990</a></li>
+                        <li><a href="#">2000</a></li>
+                        <li><a href="#">2020</a></li>
+                    </ul>
+                </li>
             </ul>
-        </nav>
-    </header>
-</body>   
-                    <img src="banner.png" alt="Imagem 1">            
-                    <img src="2020.png" alt="Imagem 1">
-                    <img src="1920imagem.png" alt="Imagem 2">
-                    <img src="1940.png" alt="Imagem 3">
-              
+            <div class="social-links">
+                <!-- Envolvendo as imagens com <a> para que sejam clicáveis -->
+                <a href="https://wa.me/seunumerowhatsapp" target="_blank">
+                    <img src="whatsapprosa.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="instagramrosa.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="facebookrosa.png" alt="Facebook">
+                </a>
             </div>
-        
+        </nav>
+        <img src="banner.png" alt="Banner rosa com uma imagem decorativa">
+    </header>
+
+    <!-- Carrossel de imagens -->
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="2020.png" alt="Imagem 1 do carrossel">
+            <img src="1920imagem.png" alt="Imagem 2 do carrossel">
+            <img src="1940.png" alt="Imagem 3 do carrossel">
         </div>
-        <script src="script.js"></script>
-        
-        </body>
-        </html>
-    </body>
-</div>
-<button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
-<button class="next" onclick="moveCarousel(1)">&#10095;</button>
-    let currentIndex = 0;
-
-    function moveCarousel(direction) {
-        const images = document.querySelector('.carousel-images');
-        const totalImages = images.children.length;
-        currentIndex += direction;
-
-        if (currentIndex < 0) {
-            currentIndex = totalImages - 1; // Vai para a última imagem
-        } else if (currentIndex >= totalImages) {
-            currentIndex = 0; // Volta para a primeira imagem
-        }
-
-        const offset = -currentIndex * 100; // Move o carrossel
-        images.style.transform = `translateX(${offset}%)`;
-    }
-</li>
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+    <div class="carousel">
+        </div>
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
