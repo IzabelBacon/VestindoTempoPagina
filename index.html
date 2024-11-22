@@ -1,91 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vestindo o Tempo</title>
-  <link rel="stylesheet" href="style.css">
-  <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!-- Linkando o CSS externo -->
+    <title>Colégio Helena</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Banner no topo -->
-    <div class="banner.png">
-        <h1>Bem-vindo ao nosso site!</h1>
-        <p>Explore e descubra os nossos conteúdos incríveis.</p>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Logo.png" alt="Logo">
+            </div>
+            <ul class="menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Quem Somos</a></li>
+                <li class="dropdown">
+                    <a href="#">Cursos</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Desenvolvimento de Sistemas</a></li>
+                        <li><a href="#">Formação de Docentes</a></li>
+                        <li><a href="#">Química para Empresas</a></li>
+                        <li><a href="#">Ensino Regular</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contatos</a></li>
+            </ul>
+            <div class="social-links">
+                <img src="instagram 1.png" href="https://www.instagram.com" target="_blank" alt="Instagram"></a>
+                <img src="facebook 1.png" href="https://www.facebook.com" target="_blank"alt="Facebook"></a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="01.png" alt="Imagem 1">
+            <img src="2.png" alt="Imagem 2">
+            <img src="3.png" alt="Imagem 3">
+        </div>
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
     </div>
 
-    <!-- Cabeçalho principal -->
-    <header>
-        <h2>Esta é uma demonstração da fonte Yeseva One.</h2>
-    </header>
+</div>
+<script src="script.js"></script>
 
-    <!-- Seção de conteúdo -->
-    <section>
-        <p>Essa é uma frase simples, mas estilizada com a fonte Yeseva One. Veja como ela fica bonita em títulos e parágrafos.</p>
-    </section>
-    
-    <footer>
-        <p>Todos os direitos reservados &copy; 2024</p>
-    </footer>
 </body>
 </html>
+let currentIndex = 0;
 
-</head>
-<body>
-  <header>
-    <nav>
-      <ul class="decades">
-        <li>1920s</li>
-        <li>1930s</li>
-        <li>1940s</li>
-        <li>1950s</li>
-        <li>1960s</li>
-        <li>1970s</li>
-        <li>1980s</li>
-        <li>1990s</li>
-        <li>2000s</li>
-        <li>2010s</li>
-        <li>2020s</li>
-      </ul>
-    </nav>
-  </header>
+        function moveCarousel(direction) {
+            const images = document.querySelector('.carousel-images');
+            const totalImages = images.children.length;
+            currentIndex += direction;
 
-  <main>
-    <section class="intro">
-      <h1>Vestindo o Tempo</h1>
-      <h2>A evolução da Moda ao Longo da História</h2>
-      <p>
-        A evolução da Moda ao Longo das décadas reflete não apenas as mudanças nos estilos estéticos, 
-        mas também os valores, avanços tecnológicos, movimentos culturais e mudanças sociais de cada época. 
-        Aqui você encontra a linha do tempo geral das tendências mais marcantes e suas conexões com a sociedade.<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+            if (currentIndex < 0) {
+                currentIndex = totalImages - 1; // Vai para a última imagem
+            } else if (currentIndex >= totalImages) {
+                currentIndex = 0; // Volta para a primeira imagem
+            }
 
-      </p>
-      <div class="images">
-        <div class="image"></div>
-        <div class="image rotated"></div>
-      </div>
-    </section>
-
-    <section class="clothing">
-      <h2>Roupas</h2>
-      <div class="timeline">
-        <div class="card">
-          <p>1970</p>
-        </div>
-        <div class="card">
-          <p>1980</p>
-        </div>
-        <div class="card">
-          <p>1990</p>
-        </div>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
+            const offset = -currentIndex * 100; // Move o carrossel
+            images.style.transform = `translateX(${offset}%)`;
+        }
