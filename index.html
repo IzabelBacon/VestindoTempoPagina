@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colégio Helena</title>
+    <title>Vestindo o Tempo</title><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,16 +14,16 @@
             </div>
             <ul>
                 <li class="dropdown">
-                    <a href="#">1920</a>
-                    <a href="#">1930</a>
-                    <a href="#">1940</a>
-                    <a href="#">1950</a>
-                    <a href="#">1960</a>
-                    <a href="#">1970</a>
-                    <a href="#">1980</a>
-                    <a href="#">1990</a>
-                    <a href="#">2000</a>
-                    <a href="#">2020</a>
+                    <a href="#">1920</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+                    <a href="#">1930</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+                    <a href="#">1940</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+                    <a href="#">1950</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+                    <a href="#">1960</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+                    <a href="#">1970</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+                    <a href="#">1980</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+                    <a href="#">1990</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+                    <a href="#">2000</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+                    <a href="#">2020</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
                     
                 </li>
             </ul>
@@ -66,35 +66,3 @@
         images.style.transform = `translateX(${offset}%)`;
     }
     </div>
-
-</div>
-<script src="script.js"></script>
-
-</body>
-</html>
-let currentIndex = 0;
-
-        function moveCarousel(direction) {
-            const images = document.querySelector('.carousel-images');
-            const totalImages = images.children.length;
-            currentIndex += direction;
-
-            if (currentIndex < 0) {
-                currentIndex = totalImages - 1; // Vai para a última imagem
-            } else if (currentIndex >= totalImages) {
-                currentIndex = 0; // Volta para a primeira imagem
-            }
-
-            const offset = -currentIndex * 100; // Move o carrossel
-            images.style.transform = `translateX(${offset}%)`;
-        }
-        
-        if (currentIndex < 0) {
-            currentIndex = totalImages - 1; // Vai para a última imagem
-        } else if (currentIndex >= totalImages) {
-            currentIndex = 0; // Volta para a primeira imagem
-        }
-
-        const offset = -currentIndex * 100; // Move o carrossel
-        images.style.transform = `translateX(${offset}%)`;
-    }
