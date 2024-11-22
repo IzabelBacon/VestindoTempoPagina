@@ -3,68 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colégio Helena</title>
+    <title>Vestindo o Tempo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="banner.png" alt="Logo">
-            </div>
-            <ul class="menu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Quem Somos</a></li>
-                <li class="dropdown">
-                    <a href="#">1920</a>
-                    <a href="#">1930</a>
-                    <a href="#">1940</a>
-                    <a href="#">1950</a>
-                    <a href="#">1960</a>
-                    <a href="#">1970</a>
-                    <a href="#">1980</a>
-                    <a href="#">1990</a>
-                    <a href="#">2000</a>
-                    <a href="#">2020</a>
-                    
-                </li>
-                <li><a href="#">Contatos</a></li>
-            </ul>
-            <div class="social-links">
-                <img src="instagram 1.png" href="https://www.instagram.com" target="_blank" alt="Instagram"></a>
-                <img src="facebook 1.png" href="https://www.facebook.com" target="_blank"alt="Facebook"></a>
-            </div>
-        </nav>
+        <h1>Vestindo o Tempo</h1>
+        <h2>A evolução da Moda ao Longo da História</h2>
+        <p>A evolução da Moda ao longo das décadas reflete não apenas as mudanças nos estilos estéticos, mas também os valores, avanços tecnológicos, movimentos culturais e mudanças sociais de cada época. Aqui você encontra a linha do tempo geral das tendências mais marcantes e suas conexões com a sociedade.</p>
     </header>
-    
-    <div class="carousel">
-        <div class="carousel-images">
-            <img src="01.png" alt="Imagem 1">
-            <img src="2.png" alt="Imagem 2">
-            <img src="3.png" alt="Imagem 3">
-        </div>
-        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
-        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
-    </div>
-
-</div>
-<script src="script.js"></script>
-
-</body>
-</html>
-let currentIndex = 0;
-
-        function moveCarousel(direction) {
-            const images = document.querySelector('.carousel-images');
-            const totalImages = images.children.length;
-            currentIndex += direction;
-
-            if (currentIndex < 0) {
-                currentIndex = totalImages - 1; // Vai para a última imagem
-            } else if (currentIndex >= totalImages) {
-                currentIndex = 0; // Volta para a primeira imagem
-            }
-
-            const offset = -currentIndex * 100; // Move o carrossel
-            images.style.transform = `translateX(${offset}%)`;
-        }
+    <main>
+        <section class="timeline">
+            <div class="year">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/0wQz79X.png" alt="Imagem de uma mulher em 2020">
+                </div>
+                <h3>2020</h3>
+            </div>
+            <div class="year">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/zY5U17f.png" alt="Imagem de uma mulher em 1920">
+                </div>
+                <h3>1920</h3>
+            </div>
+            <div class="year">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/R84F6nG.png" alt="Imagem de uma mulher em 1930">
+                </div>
+                <h3>1930</h3>
+            </div>
+        </section>
+        <section class="timeline-details">
+            <h3>Linha do Tempo</h3>
+            <div class="timeline-image">
+                <img src="https://i.imgur.com/8bJ28jY.png" alt="Imagem de uma roupa da década de 1920">
+            </div>
+            <p>Os vestidos curtos e retos, com cintura baixa e franjas,
