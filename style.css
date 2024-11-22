@@ -1,36 +1,35 @@
-/* Estilos gerais */
-body {
-    font-family: 'Yeseva One', cursive;
+:root {
+    --main-bg-color: #E2BEFF;
+    --hover-bg-color: lightblue;
+    --main-text-color: rgb(0, 0, 0);
+    --hover-text-color: #E2BEFF;
+    --transition-speed: 0.3s;
 }
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Dancing Script', cursive, sans-serif;
+    background-color:#E2BEFF; /* Adicionar uma cor de fundo leve */
 }
 
-/* Estilos da barra de navegação */
+/* Estilos da Barra de Navegação */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--main-bg-color);
     padding: 10px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.menu a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: background-color 0.3s, color 0.3s;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Logo */
 .logo img {
     height: 120px;
 }
 
-/* Menu */
 .menu {
     list-style: none;
     display: flex;
@@ -45,30 +44,30 @@ body {
 
 .menu a {
     text-decoration: none;
-    color: blue;
+    color: var(--main-text-color);
     font-weight: bold;
     padding: 10px 15px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-/* Cor ao passar o mouse e ao clicar */
 .menu a:hover {
-    background-color: lightblue;
-    color: white;
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
 }
 
 .menu a:active {
-    background-color: #EEC1EA;
-    color: white;
+    background-color: var(--main-text-color);
+    color: var(--hover-text-color);
 }
 
-/* Dropdown */
+/* Dropdown Menu */
 .dropdown-content {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgb(193, 193, 215);
+    background-color:#E2BEFF; /* Adicionar uma cor de fundo leve */
+    background-color: #ead3fc
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 0;
@@ -83,20 +82,20 @@ body {
 .dropdown-content li a {
     display: block;
     padding: 10px;
-    color: #EEC1EA;
+    color: var(--main-text-color);
     text-decoration: none;
 }
 
 .dropdown-content li a:hover {
-    background-color: lightblue;
-    color: white;
+    background-color: var(--main-bg-color);
+    color: var(--hover-text-color);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Links das redes sociais */
+/* Links das Redes Sociais */
 .social-links {
     display: flex;
     gap: 10px;
@@ -104,19 +103,18 @@ body {
 
 .social-links img {
     height: 50px;
-    transition: transform 0.3s;
+    transition: transform var(--transition-speed);
 }
 
 .social-links img:hover {
     transform: scale(1.1);
 }
 
-
-/* Galeria */
+/* Estilos do Carrossel */
 .carousel {
     position: relative;
-    width: 100%; /* Garante que o carrossel ocupe a largura do container */
-    max-width: 1920px; /* Limita a largura máxima */
+    width: 100%;
+    max-width: 1920px;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -133,7 +131,7 @@ body {
     border-radius: 10px;
 }
 
-/* Botões de controle */
+/* Botões de Controle do Carrossel */
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -144,6 +142,7 @@ body {
     padding: 15px;
     cursor: pointer;
     border-radius: 50%;
+    transition: background-color var(--transition-speed);
 }
 
 .prev {
@@ -156,19 +155,35 @@ body {
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-    let currentIndex = 0;
+}
 
-        function moveCarousel(direction) {
-            const images = document.querySelector('.carousel-images');
-            const totalImages = images.children.length;
-            currentIndex += direction;
+/* Responsividade - Ajustes para Telas Menores */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-            if (currentIndex < 0) {
-                currentIndex = totalImages - 1; // Vai para a última imagem
-            } else if (currentIndex >= totalImages) {
-                currentIndex = 0; // Volta para a primeira imagem
-            }
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-            const offset = -currentIndex * 100; // Move o carrossel
-            images.style.transform = `translateX(${offset}%)`;
+    .social-links {
+        justify-content: center;
+    }
+
+    .carousel-images img {
+        width: 100%; /* Certifique-se de que a largura ocupe todo o espaço disponível */
+    }
+
+    .prev, .next {
+        padding: 5px;
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Faz a transição suave ao mover os slides */
         }
+        
+    }
+}
+
