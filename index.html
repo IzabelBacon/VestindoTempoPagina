@@ -1,68 +1,66 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vestindo o Tempo</title><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="banner.png" alt="Logo">
-            </div>
-            <ul>
-                <li class="dropdown">
-                    <a href="#">1920</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-                    <a href="#">1930</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-                    <a href="#">1940</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-                    <a href="#">1950</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-                    <a href="#">1960</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-                    <a href="#">1970</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-                    <a href="#">1980</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-                    <a href="#">1990</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-                    <a href="#">2000</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-                    <a href="#">2020</a><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-                    
-                </li>
-            </ul>
-            </div>
-        </nav>
-    </header>
-    
-    <div class="carousel">
-        <div class="carousel-images">
-            <img src="01.png" alt="Imagem 1">
-            <img src="1920imagem.png" alt="Imagem 2">
-            <img src="3.png" alt="Imagem 3">
-        </div>
-        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
-        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
-        let currentIndex = 0;
-
-        function moveCarousel(direction) {
-            const images = document.querySelector('.carousel-images');
-            const totalImages = images.children.length;
-            currentIndex += direction;
-
-            if (currentIndex < 0) {
-                currentIndex = totalImages - 1; // Vai para a última imagem
-            } else if (currentIndex >= totalImages) {
-                currentIndex = 0; // Volta para a primeira imagem
-            }
-
-            const offset = -currentIndex * 100; // Move o carrossel
-            images.style.transform = `translateX(${offset}%)`;
-        }
-        
-        if (currentIndex < 0) {
-            currentIndex = totalImages - 1; // Vai para a última imagem
-        } else if (currentIndex >= totalImages) {
-            currentIndex = 0; // Volta para a primeira imagem
-        }
-
-        const offset = -currentIndex * 100; // Move o carrossel
-        images.style.transform = `translateX(${offset}%)`;
-    }
-    </div>
+body {
+    background-color: #f9e7f8; /* Soft pink background */
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #96498a; /* Purple heading */
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #b977b5; /* Lighter purple subheading */
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333; /* Dark gray text */
+  }
+  
+  .timeline {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-item {
+    width: 150px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    text-align: center;
+  }
+  
+  .timeline-item img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .timeline-item h3 {
+    margin-top: 10px;
+    color: #666; /* Dark gray subheading */
+  }
+  
+  .timeline-item .radio-button {
+    /* Customize radio button appearance */
