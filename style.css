@@ -6,6 +6,54 @@
     <title>Exemplo de Fonte Yeseva One</title>
     <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
     <style>
+    /* Definindo a fonte Yeseva One para o corpo todo */
+body {
+    font-family: 'Yeseva One', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* Estilo para o título h1 */
+h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+/* Estilo para o subtítulo h2 */
+h2 {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+/* Estilo para o parágrafo */
+section p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 900px;
+}
+
+/* Estilo para o rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
         body {
             font-family: 'Yeseva One', sans-serif;
         }
