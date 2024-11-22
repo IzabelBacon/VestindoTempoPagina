@@ -8,19 +8,55 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Banner no topo da página -->
-    <header class="header-banner">
-        <div class="logo">
-            <img src="banner.png" alt="Logo">
-        </div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="banner.png" alt="Logo">
+            </div>
+            <ul>
+                <li class="dropdown">
+                    <a href="#">1920</a>
+                    <a href="#">1930</a>
+                    <a href="#">1940</a>
+                    <a href="#">1950</a>
+                    <a href="#">1960</a>
+                    <a href="#">1970</a>
+                    <a href="#">1980</a>
+                    <a href="#">1990</a>
+                    <a href="#">2000</a>
+                    <a href="#">2020</a>
+                </li>
+            </ul>
+        </nav>
     </header>
-
-    <!-- Carrossel abaixo do banner -->
+    
     <div class="carousel">
         <div class="carousel-images">
-            <img src="2020.png" alt="Imagem 1">
+            <img src="01.png" alt="Imagem 1">
             <img src="1920imagem.png" alt="Imagem 2">
-            <img src="1940.png" alt="Imagem 3">
+            <img src="3.png" alt="Imagem 3">
         </div>
         <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
-        <button class="ne
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const images = document.querySelector('.carousel-images');
+            const totalImages = images.children.length;
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = totalImages - 1; // Vai para a última imagem
+            } else if (currentIndex >= totalImages) {
+                currentIndex = 0; // Volta para a primeira imagem
+            }
+
+            const offset = -currentIndex * 100; // Move o carrossel
+            images.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>
